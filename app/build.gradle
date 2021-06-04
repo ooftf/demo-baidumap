@@ -59,6 +59,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation 'com.ooftf.crm:baidusdk:7.3'
-    implementation 'com.github.ooftf:JLog:1.0.0'
+    implementation 'com.github.ooftf:JLog:1.0.1'
     implementation 'com.github.ooftf:basic:0.3.0'
 }

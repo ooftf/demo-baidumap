@@ -9,6 +9,8 @@ import com.baidu.location.BDAbstractLocationListener
 import com.baidu.location.BDLocation
 import com.baidu.location.LocationClient
 import com.baidu.location.LocationClientOption
+import com.baidu.mapapi.model.LatLng
+import com.baidu.mapapi.search.geocode.*
 import com.ooftf.log.JLog
 
 /**
@@ -18,6 +20,16 @@ import com.ooftf.log.JLog
  * @date 2021/6/4
  */
 object S {
+    val mGeoCoder = GeoCoder.newInstance().apply {
+        setOnGetGeoCodeResultListener(object : OnGetGeoCoderResultListener {
+            override fun onGetGeoCodeResult(geoCodeResult: GeoCodeResult) {}
+            override fun onGetReverseGeoCodeResult(reverseGeoCodeResult: ReverseGeoCodeResult) {
+                JLog.e("GeoCoderResultError", reverseGeoCodeResult.error)
+                JLog.eJson("result",reverseGeoCodeResult)
+            }
+        })
+    }
+
     @SuppressLint("StaticFieldLeak")
     val locationClient = LocationClient(MyApplication.instance).apply {
         //注册监听函数
@@ -36,6 +48,14 @@ object S {
                 if (bdLocation.latitude == 0.0 && bdLocation.longitude == 0.0) {
                     return
                 }
+                mGeoCoder.reverseGeoCode(
+                    ReverseGeoCodeOption().apply {
+                        location(LatLng(bdLocation.latitude, bdLocation.longitude))
+                        newVersion(1)
+                            .pageNum(0)
+                            .pageSize(20)
+                    }
+                )
 
             }
         })
