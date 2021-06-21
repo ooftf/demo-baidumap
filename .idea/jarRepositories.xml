@@ -31,5 +31,10 @@
       <option name="name" value="maven" />
       <option name="url" value="https://packages.aliyun.com/maven/repository/2017033-release-61klBZ/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://jitpack.io" />
+    </remote-repository>
   </component>
 </project>

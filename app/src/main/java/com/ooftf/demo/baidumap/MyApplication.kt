@@ -17,7 +17,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
+        //Director.init("b6a6080607d1a37310565aca1998e0e9", BuildConfig.DEBUG)
         runMainProcess {
             SDKInitializer.setApiKey("rQVMa8ofkcTFDbfklgoQweGWBnj6l0ll")
             SDKInitializer.initialize(this)
