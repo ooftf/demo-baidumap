@@ -17,10 +17,11 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         runMainProcess {
             SDKInitializer.setApiKey("rQVMa8ofkcTFDbfklgoQweGWBnj6l0ll")
             SDKInitializer.initialize(this)
-            S.startLocation()
+            //S.startLocation()
         }
     }
 

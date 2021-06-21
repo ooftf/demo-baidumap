@@ -5,12 +5,11 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.ooftf.demo.baidumap"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -57,7 +56,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
     implementation 'com.ooftf.crm:baidusdk:7.3'
     implementation 'com.github.ooftf:JLog:1.0.1'
     implementation 'com.github.ooftf:basic:0.3.0'
